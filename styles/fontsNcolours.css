@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "Merriweather";
+    src: url(../fonts/Merriweather/Merriweather-Bold.ttf) format('truetype');
+    font-weight: bolder;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "InterL";
+    src: url(../fonts/Inter/Inter-Light.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "InterR";
+    src: url(../fonts/Inter/Inter-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "InterM";
+    src: url(../fonts/Inter/Inter-Medium.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "InterB";
+    src: url(../fonts/Inter/Inter-Bold.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "InterS";
+    src: url(../fonts/Inter/Inter-SemiBold.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+html{
+    --main-color1: #0072BC;  
+    --main-color2: #005B96;
+    --main-color3: #172245;
+    --black: black;
+    --black80:#313131;
+    --black60:#686868;
+    --black40:#969595;
+    --white:white;
+    --red:#E95B5B;
+}

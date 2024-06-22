@@ -1,0 +1,82 @@
+@import url(fontsNcolours.css);
+@import url(headerAndFooter.css);
+@import url(breadcrumbs.css);
+@font-face {
+  font-family: "InterS";
+  src: url(../fonts/Inter/Inter-SemiBold.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+.header{
+  color:black;
+}
+.nav-item{
+  color:black;
+}
+.container {
+  flex: 1;
+}
+.page-head{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:15px;
+  margin-top:50px;
+  margin-bottom:30px;
+  margin-left:24px;
+  margin-right:24px;
+}
+
+.page-head h1 {
+  text-align: center;
+  font-size: 44px;
+  color: var(--main-color2);
+  margin:0;
+  font-family:InterM;
+}
+.materials-content{
+    margin: 0 5%;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    font-size:16px;
+    font-family:InterR
+}
+@media (max-width:768px){
+  .materials-content{
+    margin: 0 24px;
+  }
+}
+@media (max-width:768px){
+  .page-head h1 {
+      font-size: 36px;
+  }   
+}
+@media (max-width:480px){
+  .page-head h1 {
+      font-size: 30px;
+  }   
+}
+.materials-materials{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+.materials-link{
+    font-size:16px;
+    color:var(--main-color1);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.materials-link:hover{
+  color:var(--main-color2);
+}

@@ -1,0 +1,227 @@
+@import url(fontsNcolours.css);
+@font-face {
+    font-family: "InterS";
+    src: url(../fonts/Inter/Inter-SemiBold.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/*----------Header----------*/
+body{
+    --text-dark: #212121;
+    --color-blue-light: #0072BC;
+    --color-blue-dark: #1a254a;
+    --color-gray-light: #f0f0f2;
+}
+.header{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    color:var(--white);
+}
+.header-nav{
+    display:flex;
+    gap:20px;
+    align-items: center; 
+    margin-right:5%;
+}
+.nav{
+    display:flex;
+    gap:20px;
+    align-items: center; 
+}
+.header-logo{
+    display: flex;
+    gap:30px;
+    margin-left: 5%;
+}
+.logo{
+    width:80px;
+    height:80px;
+}
+.logo-text{
+    font-size:24px;
+    font-family: InterM;
+}
+a{
+    text-decoration: none;
+}
+.nav-item{
+    font-size: 16px;
+    font-family: InterS;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: var(--white);
+}
+.page-head{
+    display: flex;
+    justify-content: center;
+    gap:15px;
+    margin-top:50px;
+}
+.page-head h1 {
+    text-align: center;
+    font-size: 44px;
+    color: var(--main-color2);
+    margin:0;
+}
+.nav-item:hover{
+    color: var(--main-color2);
+}
+.header-nav-btn{
+    font-size: 16px;
+    font-family: InterM;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border:2px solid transparent;
+    color:white;
+    background-color: var(--main-color1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transition: border 0.3s ease;
+}
+.header-nav-btn:hover{
+    border-color:var(--main-color2)
+}
+.header-nav-btn:active{
+    background-color:var(--main-color2)
+}
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 2%;
+    z-index:2;
+  }
+   
+@media (max-width: 1024px) {
+    body{
+        font-size:15px;
+    }
+    .logo-text {
+        display: none;
+    }
+    .nav-item{
+        font-size:15px;
+    }
+    .header-nav-btn{
+        font-size:15px;
+    }
+    .nav-btn{
+        font-size:15px;
+    }
+}
+@media (max-width: 768px) {
+    .header-nav{
+        display: none;
+    }
+    .burger-menu {
+        display: flex;
+    }
+    .dropdown-menu.show {
+        display: flex;
+    }
+    .block-content{
+        flex-direction: column;
+        align-items: center;
+        gap:16px;
+    }
+    .block-content .block-content-item{
+        width:100%;
+        align-items: center;
+        text-align: center;
+    }
+}
+/*********** FOOTER **********/
+.container3{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+footer{
+    margin-top:auto;
+    background-color: var(--color-blue-dark);
+    font-size: 14px;
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: InterM;
+}
+footer a{ color: var(--white); }
+footer a:hover{ color:var(--white); opacity: .8; cursor: pointer;}
+
+footer ul{
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+}
+
+footer path{
+    fill:#005B96;
+    transition-duration: .2s;
+}
+
+    footer > div{
+        display: flex;
+        align-items: center;
+    }
+
+        .nntu-logo{
+            display: flex;
+            align-items: center;
+            width: max-content;
+        }
+        
+        .nntu-logo img{ margin-right: 1rem; }
+        .nntu-logo p{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .nntu-logo p > span{
+            text-transform: uppercase;
+            line-height: 1.6;
+        }
+
+        .contacts{ padding-left: 5px; }
+        .contacts li{
+            display: flex;
+            align-items: center;
+            margin-bottom: .5rem;
+        }
+            .contacts li img{ margin-right: .5rem; }
+
+        .social li{ display: inline-block; }
+        .social a:hover{ opacity: 1; }
+        .social a:hover path{ fill: var(--color-gray-light); }
+
+@media (min-width: 950px){
+    footer > div > div{ width: 50% }
+}
+@media (min-width: 721px){
+    footer > div > div:last-child{
+        padding-left: 1rem;
+        box-sizing: border-box;
+    }
+}
+@media (max-width: 720px){
+    footer > div{ flex-direction: column; }
+    footer > div > div:last-child{ margin-top: 2rem; }
+    .contacts li{justify-content: center;}
+    .social{ text-align: center; }
+}
+@media (max-width: 450px){
+    .nntu-logo{ 
+        flex-direction: column;
+        text-align: center;
+    }
+    .nntu-logo img{ margin-right: 0; }
+    .nntu-logo p{
+        margin-top: 1rem;
+    }
+    footer > div > div:last-child{ margin-top: 1rem; }
+}

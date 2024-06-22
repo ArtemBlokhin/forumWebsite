@@ -1,0 +1,13 @@
+.page-head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:15px;
+    margin-top:50px;
+  }
+  .page-head h1 {
+    text-align: center;
+    font-size: 44px;
+    color: var(--main-color2);
+    margin:0;
+  }

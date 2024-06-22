@@ -1,0 +1,507 @@
+@import url(fontsNcolours.css);
+@import url(breadcrumbs.css);
+.header {
+    color: black;
+}
+.nav-item {
+    color: black;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Остальной CSS-код */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .svg-container svg {
+    display: none; /* Скрыть SVG по умолчанию */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .svg-container svg.show {
+    display: block;
+    animation: fadeIn 0.3s forwards;
+  }
+  
+  .svg-container svg.hide {
+    animation: fadeOut 0.3s forwards;
+  }
+  
+/*Анимация заполнения линии и наоборот*/
+@keyframes fillAnimationVertical {
+    0% {
+      width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes notfillAnimationVertical {
+    0% {
+      width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+.animate{
+    animation: fillAnimationVertical 3s forwards; /* Анимация заполнения */
+}
+.animate2{
+    animation: notfillAnimationVertical 3s forwards; /* Анимация заполнения */
+}  
+/*Анимация изменения цвета круга и текста и наоборот*/
+@keyframes colorChange {
+    0% {
+        border-color: var(--black40);
+        color: var(--black40);
+    }
+    100% {
+        border-color: var(--main-color1);
+        color: var(--main-color1);
+    }
+}
+@keyframes textColorChange {
+    0% {
+        color: var(--black40);
+    }
+    100% {
+        color: var(--main-color1);
+    }
+}
+@keyframes backColorChange {
+    0% {
+        border-color: var(--main-color1);
+        color: var(--main-color1);
+    }
+    100% {
+        border-color: var(--black40);
+        color: var(--black40);
+    }
+}
+@keyframes BackTextColorChange {
+    0% {
+        color: var(--main-color1);
+    }
+    100% {
+        color: var(--black40);
+    }
+}
+.animateCircle {
+    animation: colorChange 3s forwards;
+}
+.animateText {
+    animation: textColorChange 3s forwards;
+}
+.backAnimateCircle {
+    animation: backColorChange 3s forwards;
+}
+.backAnimateText {
+    animation: BackTextColorChange 3s forwards;
+}
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    position: relative;
+    z-index: 1; /* Ensure circles are above the line */
+}
+
+.circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid var(--main-color1);
+    color: var(--main-color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: white; /* Ensure the circle has a background color to cover the line */
+    font-family: InterM;
+}
+
+.circle.inactive {
+    border-color: var(--black40);
+    color: var(--black40);
+}
+
+.line {
+    position: absolute;
+    top: 24px; /* Adjust to vertically center the line relative to circles */
+    left: 48px; /* Start the line at the right edge of the first circle */
+    right: 48px; /* End the line at the left edge of the second circle */
+    height: 4px;
+    background-color: var(--black40);
+    z-index: 0; /* Ensure the line is below the circles */
+}
+.line-fill {
+    width: 0;
+    height: 4px; /* Начальная высота */
+    background-color: var(--main-color1); /* Цвет заполнения */
+    border-radius: 5px; /* Скругление углов */
+  }
+.step-text {
+    color: var(--main-color1);
+    font-family: InterM;
+    font-size:16px;
+}
+
+.hidden {
+    display: none;
+  }
+.step-text.inactive {
+    color: var(--black40);
+}
+
+
+.form-section-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:32px 48px;
+    background-color: white;
+    max-width: 748px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+.form-section {
+    flex: 1;
+    width: 100%; /* Устанавливаем ширину для формы */
+    box-sizing: border-box;
+}
+
+.form-group input, .form-group select {
+    width: calc(100% - 30px); /* Корректируем ширину для внутреннего паддинга */
+    box-sizing: border-box; /* Устанавливаем box-sizing для правильного расчета ширины */
+}
+.form-section h1 {
+    color: var(--main-color2);
+    font-size:44px;
+    text-align: left;
+    font-family: InterM;
+}
+.head-bl{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:12px;
+    align-items: center;
+ }
+.form-section form {
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.form-group label {
+    font-family: InterM;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+.phone-hint{
+    font-size: 14px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    display: block;
+    color: var(--black60);
+    font-size:14px;
+    font-family: InterR;
+}
+.phone-hint.hidden {
+    display:none;
+}
+.form-group input {
+    width: 100%;
+    height: 48px;
+    padding-left: 15px;
+    border: 2px solid;
+    border-color: var(--black60);
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: InterR;
+    transition: border-color 0.3s ease; 
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--black80);
+}
+
+.form-footer {
+    text-align: right;
+}
+
+.form-footer .form-done {
+    background-color: var(--main-color1);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size:20px;
+    margin-top: 24px;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+}
+.form-footer .form-done:active {
+    background-color: var(--main-color2);
+}
+.form-footer .form-done:not(:disabled):hover {
+    border: 2px solid var(--main-color2);
+}
+.form-footer .form-done:disabled {
+    cursor:not-allowed;
+    background-color: var(--black40);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+.form-footer .form-back:hover{
+    background-color: #EDEDED;
+}
+.form-footer .form-back{
+    border:3px solid var(--main-color1);
+    padding: 12px 24px;
+    color: var(--main-color1);
+    background-color: white;
+    font-size:20px;
+    margin-right: 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    font-family: InterM;
+}
+
+
+b{
+    color: var(--red);
+}
+/*----------Errors----------*/
+
+.error-message {
+    color: var(--red);
+    display: none;
+    font-size: 14px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    font-family: InterR;
+  }
+  .radio-btns{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.radio-btn-group{
+    display: flex;
+    align-items: center;
+    padding:0;
+    margin-left:0;
+    padding:0;
+    font-family: InterM;
+}
+
+.radio-btn-group input{
+    width: 24px;
+    height: 24px;
+    cursor:pointer;
+}
+.radio-btn-group label{
+    margin-left:5px;
+}
+.radio-btn-group input:checked{
+    border: 6px solid black;
+}
+  .custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%; 
+    margin-bottom: 30px;
+}
+
+/*----------Кастомный селект----------*/
+
+.custom-select::after {
+    content: url('../images/Vector 1.svg');
+    background-color: #ffffff;
+    position: absolute;
+    top: 70%; /* Center the arrow vertically */
+    right: 15px; /* Position the arrow 15px from the right edge */
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+/*------------Ошибки----------------*/
+body.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5; /* Можно заменить на ваш фон */
+}
+
+
+
+.radio-btn-group, .custom-select {
+    margin-bottom: 15px;
+}
+.form-group select{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-size: 12px;
+    padding-right: 20px; /* Увеличиваем правый отступ, чтобы стрелочка не накладывалась на текст */
+    width: 100%;
+    height: 56px;
+    padding-left: 15px;
+    border: 2px solid #686868;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s ease; 
+
+    border: 2px solid #686868;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+.form-group select option {
+    padding: 10px; /* Внутренние отступы */
+    font-size: 16px; /* Размер текста */
+    background-color: #ffffff; /* Фоновый цвет */
+    color: #333333; /* Цвет текста */
+  }
+.form-group select:focus {
+    outline: none;
+    border-color: #313131;
+}
+  /* Стили для поля с ошибкой */
+  input.error {
+    border-color: var(--red);
+  }
+
+@media (max-width: 1200px) {
+    body{
+        justify-content: center;
+    }
+    .form-section{
+        padding:56px;
+        background-color: var(--white);
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        max-width:100%;
+        width:100%;
+    }
+
+    .image-section {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 8px;
+    }
+    .form-section{
+        padding:24px;
+    }
+}
+.back-image {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(30%);
+    object-fit: cover;
+}
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .svg-container {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .svg-container svg {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .svg-container svg.show {
+    opacity: 1;
+  }
+  
+  .svg-container svg.hide {
+    opacity: 0;
+  }
+  
+  .error-message {
+    color: var(--red);
+    display: none;
+    font-size: 14px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    font-family: InterR;
+  }
+  
+  input.error, select.error {
+    border-color: var(--red);
+  }

@@ -1,0 +1,256 @@
+@import url(fontsNcolours.css);
+@import url(headerAndFooter.css);
+@import url(breadcrumbs.css);
+@font-face {
+    font-family: "InterS";
+    src: url(../fonts/Inter/Inter-SemiBold.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: InterR;
+    font-size: 16px;
+}
+
+.header{
+    color: var(--black);
+}
+.nav-item{
+    color:var(--black);
+    text-decoration: none;
+}
+.nav-item2{
+    font-size: 16px;
+    font-family: InterS;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color:var(--black);
+}
+.nav-item2:hover{
+    color: var(--main-color2);
+}
+.active-item{
+    color:var(--main-color1);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+
+/*----------H1,text and  nav----------*/
+.page-head{
+    display: flex;
+    justify-content: center;
+    gap:15px;
+    margin-top:50px;
+}
+.page-head h1 {
+    text-align: center;
+    font-size: 44px;
+    color: var(--main-color2);
+    margin:0;
+}
+.nav{
+    display:flex;
+    gap:20px;
+    font-family: InterM;
+    align-items: center; 
+}
+.nav-block{
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width:768px){
+    .nav-block{
+        display: block;
+    }
+    nav{
+       justify-content: space-between;
+       text-align: center;
+    }
+}
+
+.btn{
+    background-color: var(--main-color1);
+    color:var(--white);
+    padding: 12px 24px;
+    border-radius: 6px;
+    border:none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-family:InterM;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+.btn-div{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    margin-top:24px;
+    margin-bottom:24px;
+}
+.bottom-btn{
+    display: none;
+}
+.btn:hover{
+    background-color: var(--main-color2);
+}
+/*----------Schedule table----------*/
+/*----------Schedule table----------*/
+.schedule-content {
+    margin: 0px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.schedule-schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 70px;
+}
+.schedule-row {
+    display: grid;
+    grid-template-columns: 180px auto;
+    gap: 50px;
+    padding: 10px 0;
+}
+
+.schedule-2nd-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+b {
+    color: var(--main-color1);
+}
+.schedule-time {
+    font-family: InterM;
+    color: var(--main-color1);
+    width: 180px;
+    font-size: 24px;
+}
+.schedule-link {
+    font-size: 16px;
+    color: var(--main-color1);
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.schedule-link:hover {
+    color: var(--main-color2);
+}
+.page-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+/*----------Media----------*/
+@media (max-width:768px){
+    .page-head h1 {
+        font-size: 36px;
+    }   
+}
+@media (max-width:480px){
+    .page-head h1 {
+        font-size: 30px;
+    }   
+}
+@media (max-width: 1024px) {
+    body {
+        font-size: 15px;
+    }
+    .logo-text {
+        display: none;
+    }
+    .nav-item2 {
+        font-size: 15px;
+    }
+    .header-nav-btn {
+        font-size: 15px;
+    }
+    .nav-btn {
+        font-size: 15px;
+    }
+    .schedule-time {
+        font-size: 20px;
+        width: 150px;
+    }
+}
+@media (max-width: 768px) {
+    .header-nav {
+        display: none;
+    }
+    .burger-menu {
+        display: flex;
+        margin-right: 24px;
+    }
+    .schedule-schedule {
+        margin-bottom: 0;
+    }
+    .dropdown-menu.show {
+        display: flex;
+    }
+    .schedule-2nd-row {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .header-nav {
+        margin-right: 24px;
+    }
+    .schedule-content {
+        margin: 0px 24px;
+    }
+    .bottom-btn {
+        display: block;
+    }
+    .nav-btn {
+        display: none;
+    }
+}
+@media (max-width: 1024px) {
+    body {
+        font-size: 14px;
+    }
+    .nav-item2 {
+        font-size: 14px;
+    }
+    .header-nav-btn {
+        font-size: 14px;
+    }
+    .nav-btn {
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px) {
+    .schedule-row {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        text-align: center;
+    } 
+    .nav-block {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }   
+    h1 {
+        font-size: 24px;
+    }
+}
